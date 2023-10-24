@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc2a8jx3ib6q8"]
+
+[ext_resource type="Script" path="res://components/todo_list.gd" id="1_o4shr"]
+[ext_resource type="PackedScene" uid="uid://bvifthn6bhs5b" path="res://components/footer.tscn" id="2_2uuvy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r0j2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.901961, 0.901961, 0.901961, 1)
+shadow_color = Color(0, 0, 0, 0.15)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5yvi"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 1
+border_color = Color(0.858824, 0.858824, 0.858824, 1)
+
+[node name="TodoList" type="PanelContainer" node_paths=PackedStringArray("input_field", "container", "footer")]
+custom_minimum_size = Vector2(600, 0)
+offset_right = 600.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5r0j2")
+script = ExtResource("1_o4shr")
+input_field = NodePath("VBoxContainer/LineEdit")
+container = NodePath("VBoxContainer/ItemContainer")
+footer = NodePath("VBoxContainer/Footer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.301961, 0.301961, 0.301961, 1)
+theme_override_colors/font_placeholder_color = Color(0.858824, 0.858824, 0.858824, 1)
+theme_override_colors/caret_color = Color(0.301961, 0.301961, 0.301961, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5yvi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_t5yvi")
+placeholder_text = "What needs to be done?"
+caret_blink = true
+
+[node name="ItemContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Footer" parent="VBoxContainer" instance=ExtResource("2_2uuvy")]
+layout_mode = 2

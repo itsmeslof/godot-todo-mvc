@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvifthn6bhs5b"]
+
+[ext_resource type="Script" path="res://components/footer.gd" id="1_ofd3r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ji40f"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdk8d"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dju0u"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.898039, 0.788235, 0.788235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70kn1"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.937255, 0.835294, 0.835294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7aolt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pf88u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrayp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1d2v"]
+
+[node name="Footer" type="PanelContainer" node_paths=PackedStringArray("count_label", "clear_completed_btn", "all_btn", "active_btn", "completed_btn")]
+custom_minimum_size = Vector2(600, 0)
+offset_right = 600.0
+offset_bottom = 59.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ji40f")
+script = ExtResource("1_ofd3r")
+count_label = NodePath("HBoxContainer/Label")
+clear_completed_btn = NodePath("HBoxContainer/HBoxContainer2/LinkButton")
+all_btn = NodePath("HBoxContainer/HBoxContainer/Button")
+active_btn = NodePath("HBoxContainer/HBoxContainer/Button2")
+completed_btn = NodePath("HBoxContainer/HBoxContainer/Button3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.466667, 0.466667, 0.466667, 1)
+text = "2 items left"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_disabled_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdk8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dju0u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7aolt")
+text = "All"
+
+[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_disabled_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdk8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dju0u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pf88u")
+text = "Active"
+
+[node name="Button3" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_focus_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_disabled_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdk8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dju0u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_70kn1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rrayp")
+text = "Completed"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.466667, 0.466667, 0.466667, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_constants/underline_spacing = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n1d2v")
+text = "Clear Completed"
